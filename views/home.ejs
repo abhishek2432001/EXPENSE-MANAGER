@@ -18,9 +18,51 @@
             <!-- display balance, income, expense -->
             <div id="balance_display">
                 <div id="transaction">
-                    <p class='heading'> ADD TRANSACTION </p>
-                    <textarea id="transaction-form" name="transaction" placeholder="Enter new transaction details" required></textarea>
+                    <p class='heading'> YOUR BALANCE </p>
+                    <div id='balance-amount'>
+                        <%
+                            let total = 0;
+                            for (let i of expense_list) { 
+                                  total+= (parseInt(i.amount));
+                            }
+                            %>
+                            <%= total %>
+                    </div>
                 </div>
+
+                <!-- income -->
+                <div id="income_expense_display">
+                    <div id="income-div">
+                        <p class="heading"> INCOME </p>
+                        <div id='income'>
+                            <%
+                            let income = 0;
+                            for (let i of expense_list) { 
+                                if(parseInt(i.amount)>0)
+                                  income+= (parseInt(i.amount));
+                            }
+                            %>
+                            <%= income %>
+                        </div>
+                    </div>
+
+
+                    <!-- expense -->
+                    <div id="expense-div">
+                        <p class="heading"> EXPENSE </p>
+                        <div id='expense'>
+                            <%
+                            let expense = 0;
+                            for (let i of expense_list) { 
+                                if(0>parseInt(i.amount))
+                                  expense+= (parseInt(i.amount));
+                            }
+                            %>
+                            <%= Math.abs(expense) %>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <div id="expense-list">
@@ -32,7 +74,7 @@
                     <textarea id="transaction-form" name="transaction" placeholder="Enter new transaction details" required></textarea>
                     </div>
 
-                    <!-- Category -->
+                    <!-- amount -->
                     <div id="amount_date">
                         <div id="amount-div">
                             <p class="heading"> AMOUNT </p>

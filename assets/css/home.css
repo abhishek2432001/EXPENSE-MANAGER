@@ -53,7 +53,58 @@ label{
 
 /* balance_display */
 #balance_display{
-    height: 200px;
+    border-bottom: none;
+    /* height: 200px; */
+}
+
+/* balance amount display */
+#balance-amount{
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: lightsalmon;
+}
+
+/* income expense div container */
+#income_expense_display{
+    /* border-bottom: 1px solid black; */
+    height: 5rem;
+    display: flex;
+}
+
+/* income div container */
+#income-div{
+    border-right: 1px solid black;
+    display: inline-block;
+    height: 5rem; 
+    width: 50%;
+    margin: 0px;
+}
+
+/* expense div container */
+#expense-div{
+    
+    display: inline-block;
+    height: 5rem;
+    width: 50%;
+    margin: 0px;
+}
+
+/* income */
+#income{
+    text-align: center;
+    font-size: 2.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: aquamarine;
+    
+}
+
+/* expense */
+#expense{
+    text-align: center;
+    font-size: 2.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: lightyellow;
 }
 
 /* /////////////////////////////////////////////////////////////////////////// */
@@ -92,7 +143,6 @@ label{
     border-bottom: 1px solid black;
     height: 5rem;
     display: flex;
-
 }
 
 /* amount div container */
@@ -232,7 +282,7 @@ label{
 
 /* category box */
 .amount-list{
-    background-color: rgb(250, 80, 46);
+    background-color: rgb(31, 183, 243);
     color: white;
     border-radius: 5%;
     height: 2.5rem;
