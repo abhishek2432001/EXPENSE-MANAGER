@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 
 
 // for routes use localhost:8000/ to see the main functionality
-//app.use('/', require('./routes'));
+app.use('/', require('./routes'));
 
 // running the server
 app.listen(port, function(err){
