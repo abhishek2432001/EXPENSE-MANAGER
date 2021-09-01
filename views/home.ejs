@@ -17,7 +17,10 @@
             </div>
             <!-- display balance, income, expense -->
             <div id="balance_display">
-                balance,income,Expense
+                <div id="transaction">
+                    <p class='heading'> ADD TRANSACTION </p>
+                    <textarea id="transaction-form" name="transaction" placeholder="Enter new transaction details" required></textarea>
+                </div>
             </div>
 
             <div id="expense-list">
@@ -58,6 +61,49 @@
                     </div>
 
                 </form>
+
+                <!-- displaying expense details -->
+                <form id="expense-delete" action="/delete-expense" method="GET">
+                    <ul>
+                        <% for (let i of expense_list) { %>
+                            <li>
+                                <div class="expense-list-container">
+                                    <div class="transaction-date-container">
+                                        <label class="transaction-list">
+                                            <input type="checkbox" class="todo-checkbox" name="<%= i._id%>"> <%= i.transaction %> 
+                                            <label class="date-list"> <i class="fas fa-calendar-week"></i> 
+                                                <%
+                                                     var months = {
+                                                        '01': 'JAN',
+                                                        '02': 'FEB',
+                                                        '03': 'MAR',
+                                                        '04': 'APR',
+                                                        '05': 'MAY',
+                                                        '06': 'JUN',
+                                                        '07': 'JUL',
+                                                        '08': 'AUG',
+                                                        '09': 'SEP',
+                                                        '10': 'OCT',
+                                                        '11': 'NOV',
+                                                        '12': 'DEC'
+                                                     }
+                                                    %>
+                                                <%=  months[i.date.slice(5,7)] + ' ' + i.date.slice(8,10) + ', ' + i.date.slice(0,4) %> 
+                                            </label>
+                                        </label>
+                                        
+                                    </div>
+    
+                                    <div class="amount-container">
+                                        <label class="amount-list"> <%= i.amount %> </label>
+                                    </div>
+                                </div>    
+                            </li>
+                        <% } %>
+                    </ul>
+                </form>
+
+
                
             </div>
 

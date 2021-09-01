@@ -33,3 +33,17 @@ module.exports.createExpense = function(req, res){
         return res.redirect('back');
     });
 }
+
+// action --> for deletion of expenses from mongodb database
+module.exports.deleteExpense = function(req, res){
+    var list = Object.keys(req.query);
+    for(let id of list){
+        Expenselist.findByIdAndDelete(id, function(err){
+            if(err){
+                console.log('Error in deleting an object from database');
+            }
+        });
+    }
+    return res.redirect('back');
+}
+
