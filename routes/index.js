@@ -10,6 +10,11 @@ const homeController = require('../controllers/home_controllers.js');
 
 // routing to homepage controller
 router.get('/',homeController.home);
+// routing to create expense controller
+router.post('/create-expense', homeController.createExpense);
+
+
+
 
 // exporting router object
 module.exports = router;

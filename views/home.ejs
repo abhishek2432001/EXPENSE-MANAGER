@@ -1,0 +1,72 @@
+<!-- veiw page/Template to be rendered -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <script src="https://kit.fontawesome.com/726d2f0aee.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <!-- main div -->
+        <div id = "main-div">
+            <!-- title of the page -->
+            <div id="page-title">
+                Expense Tracker
+            </div>
+            <!-- display balance, income, expense -->
+            <div id="balance_display">
+                balance,income,Expense
+            </div>
+
+            <div id="expense-list">
+                <!-- getting expense details using form -->
+                <form action="/create-expense" method="POST">
+                    <!-- transaction -->
+                    <div id="transaction">
+                    <p class='heading'> ADD TRANSACTION </p>
+                    <textarea id="transaction-form" name="transaction" placeholder="Enter new transaction details" required></textarea>
+                    </div>
+
+                    <!-- Category -->
+                    <div id="amount_date">
+                        <div id="amount-div">
+                            <p class="heading"> AMOUNT </p>
+                            <textarea id="amount-form" name="amount" placeholder="Enter Amount: Negetive-Expense, Positive-Income" required></textarea>
+                        </div>
+
+
+                        <!-- date -->
+                        <div id="date-div">
+                            <p class="heading"> DATE </p>
+                            <input type="date" name="date" id="date" >
+                        </div>
+                    </div>
+                        
+                        
+                        <!-- Add and delete button -->
+                    <div id="add-delete-button">
+                        <div  id="add-button-container">
+                            <button type="submit" id="add-button"><i class="fas fa-plus"></i> &nbsp; ADD </button>
+                        </div>
+                
+                    
+                        <div id="delete-button-container">
+                                <button type="submit" id="delete-button" form="expense-delete"><i class="fas fa-trash-alt"></i> &nbsp; DELETE</button>
+                        </div>
+                    </div>
+
+                </form>
+               
+            </div>
+
+
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/home.js"></script>
+    </body>
+</html>
+
+
+
