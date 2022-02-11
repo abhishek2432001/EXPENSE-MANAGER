@@ -39,7 +39,7 @@
                             let income = 0;
                             for (let i of expense_list) { 
                                 if(parseInt(i.amount)>0)
-                                  income+= (parseInt(i.amount));
+                                  income+= 0.9*(parseInt(i.amount));
                             }
                             %>
                             <%= income %>
@@ -55,7 +55,7 @@
                             let expense = 0;
                             for (let i of expense_list) { 
                                 if(0>parseInt(i.amount))
-                                  expense+= (parseInt(i.amount));
+                                  expense+= 0.9*(parseInt(i.amount));
                             }
                             %>
                             <%= Math.abs(expense) %>
@@ -137,7 +137,7 @@
                                     </div>
     
                                     <div class="amount-container">
-                                        <label class="amount-list"> <%= i.amount %> </label>
+                                        <label class="amount-list"> <%= 0.9*parseInt(i.amount) %> </label>
                                     </div>
                                 </div>    
                             </li>
